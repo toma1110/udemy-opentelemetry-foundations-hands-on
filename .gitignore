@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local editor files
+.vscode/
+.idea/
+
+# Local environment files
+.env
+.env.*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Local logs and temporary files
+*.log
+tmp/
+temp/
