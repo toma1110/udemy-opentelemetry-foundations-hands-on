@@ -13,8 +13,37 @@ function Test-CommandExists {
 }
 
 if (-not (Test-CommandExists -Name "docker")) {
+    $defaultDockerBin = "C:\Program Files\Docker\Docker\resources\bin"
+    if (Test-Path (Join-Path $defaultDockerBin "docker.exe")) {
+        $env:PATH = "$defaultDockerBin;$env:PATH"
+    }
+}
+
+if (-not (Test-CommandExists -Name "docker")) {
     Write-Host "NOT-RUN: docker command was not found. Install and start Docker Desktop, then rerun this script."
     exit 2
+}
+
+function Invoke-JsonWithRetry {
+    param(
+        [string]$Uri,
+        [int]$Attempts = 12,
+        [int]$DelaySeconds = 2
+    )
+
+    $lastError = $null
+    foreach ($attempt in 1..$Attempts) {
+        try {
+            return Invoke-RestMethod $Uri -TimeoutSec 10
+        } catch {
+            $lastError = $_
+            if ($attempt -lt $Attempts) {
+                Start-Sleep -Seconds $DelaySeconds
+            }
+        }
+    }
+
+    throw $lastError
 }
 
 Push-Location $labDir
@@ -28,7 +57,7 @@ try {
 
     docker compose ps
 
-    $health = Invoke-RestMethod http://localhost:8000/healthz -TimeoutSec 10
+    $health = Invoke-JsonWithRetry -Uri "http://localhost:8000/healthz"
     if ($health.status -ne "ok") {
         throw "healthz returned unexpected status: $($health | ConvertTo-Json -Compress)"
     }
