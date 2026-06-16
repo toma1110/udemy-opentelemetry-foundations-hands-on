@@ -13,6 +13,38 @@ services:
       otel-collector:
         condition: service_started
 
+  python-zero-code:
+    build:
+      context: ./python_zero_code_app
+    container_name: c008-python-zero-code
+    environment:
+      OTEL_SERVICE_NAME: python-zero-code
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+      OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+      OTEL_LOGS_EXPORTER: none
+      OTEL_RESOURCE_ATTRIBUTES: deployment.environment=local-lab,course.id=c008,lab.section=instrumentation
+    ports:
+      - "8001:8001"
+    depends_on:
+      otel-collector:
+        condition: service_started
+
+  java-zero-code:
+    build:
+      context: ./java_zero_code_app
+    container_name: c008-java-zero-code
+    environment:
+      OTEL_SERVICE_NAME: java-zero-code
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+      OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+      OTEL_LOGS_EXPORTER: none
+      OTEL_RESOURCE_ATTRIBUTES: deployment.environment=local-lab,course.id=c008,lab.section=instrumentation
+    ports:
+      - "8080:8080"
+    depends_on:
+      otel-collector:
+        condition: service_started
+
   otel-collector:
     image: otel/opentelemetry-collector-contrib:0.102.1
     container_name: c008-otel-collector

@@ -4,10 +4,12 @@ import random
 import time
 from uuid import uuid4
 
+import httpx
 from fastapi import FastAPI, HTTPException, Request
 from opentelemetry import metrics, trace
 from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExporter
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.propagate import extract, inject
 from opentelemetry.sdk.metrics import MeterProvider
 from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
 from opentelemetry.sdk.resources import Resource
@@ -131,7 +133,8 @@ def root():
     return {
         "service": SERVICE_NAME,
         "message": "Hello Telemetry",
-        "try": ["/healthz", "/checkout", "/error"],
+        "try": ["/healthz", "/checkout", "/manual-span", "/frontend", "/backend", "/error"],
+        "otlp_endpoint": OTLP_ENDPOINT,
     }
 
 
@@ -158,6 +161,52 @@ def checkout():
             "status": "accepted",
             "order_id": order_id,
             "sleep_ms": sleep_ms,
+        }
+
+
+@app.get("/manual-span")
+def manual_span():
+    with tracer.start_as_current_span("inventory.reserve") as span:
+        item_id = f"item-{random.randint(100, 999)}"
+        quantity = random.randint(1, 3)
+        span.set_attribute("app.item_id", item_id)
+        span.set_attribute("app.quantity", quantity)
+        span.add_event("inventory checked")
+        logger.info("manual span completed item_id=%s quantity=%s", item_id, quantity)
+        return {
+            "status": "reserved",
+            "item_id": item_id,
+            "quantity": quantity,
+        }
+
+
+@app.get("/frontend")
+def frontend():
+    with tracer.start_as_current_span("frontend.call_backend") as span:
+        headers = {}
+        inject(headers)
+        traceparent = headers.get("traceparent", "")
+        span.set_attribute("app.propagated_traceparent", bool(traceparent))
+        logger.info("calling backend with trace context")
+        with httpx.Client(timeout=10) as client:
+            response = client.get("http://127.0.0.1:8000/backend", headers=headers)
+            response.raise_for_status()
+        return {
+            "status": "ok",
+            "traceparent_sent": traceparent,
+            "backend": response.json(),
+        }
+
+
+@app.get("/backend")
+def backend(request: Request):
+    context = extract(dict(request.headers))
+    with tracer.start_as_current_span("backend.handle_request", context=context) as span:
+        span.set_attribute("app.backend", "local")
+        logger.info("backend handled propagated context")
+        return {
+            "status": "ok",
+            "received_traceparent": request.headers.get("traceparent", ""),
         }
 
 

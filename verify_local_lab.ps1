@@ -69,6 +69,31 @@ try {
         }
     }
 
+    $manualSpan = Invoke-RestMethod http://localhost:8000/manual-span -TimeoutSec 10
+    if ($manualSpan.status -ne "reserved") {
+        throw "manual-span returned unexpected response: $($manualSpan | ConvertTo-Json -Compress)"
+    }
+
+    $frontend = Invoke-RestMethod http://localhost:8000/frontend -TimeoutSec 10
+    if ($frontend.status -ne "ok" -or [string]::IsNullOrWhiteSpace($frontend.traceparent_sent)) {
+        throw "frontend did not propagate traceparent: $($frontend | ConvertTo-Json -Compress)"
+    }
+
+    $pythonAuto = Invoke-RestMethod http://localhost:8001/auto/checkout -TimeoutSec 10
+    if ($pythonAuto.status -ne "accepted") {
+        throw "python zero-code app returned unexpected response: $($pythonAuto | ConvertTo-Json -Compress)"
+    }
+
+    $javaHello = Invoke-RestMethod http://localhost:8080/hello -TimeoutSec 10
+    if ($javaHello.status -ne "ok") {
+        throw "java zero-code app returned unexpected response: $($javaHello | ConvertTo-Json -Compress)"
+    }
+
+    $javaCheckout = Invoke-RestMethod http://localhost:8080/checkout -TimeoutSec 10
+    if ($javaCheckout.status -ne "accepted") {
+        throw "java checkout returned unexpected response: $($javaCheckout | ConvertTo-Json -Compress)"
+    }
+
     try {
         $null = Invoke-WebRequest http://localhost:8000/error -TimeoutSec 10
         throw "error endpoint did not return an error"
@@ -86,7 +111,25 @@ try {
         throw "Prometheus query did not return hello_requests_total data."
     }
 
+    Start-Sleep -Seconds 6
+
+    $jaegerServices = Invoke-RestMethod http://localhost:16686/api/services -TimeoutSec 10
+    foreach ($expectedService in @("hello-telemetry", "python-zero-code", "java-zero-code")) {
+        if ($jaegerServices.data -notcontains $expectedService) {
+            throw "Jaeger service list did not include $expectedService. Services: $($jaegerServices.data -join ', ')"
+        }
+    }
+
+    foreach ($serviceName in @("hello-telemetry", "python-zero-code", "java-zero-code")) {
+        $traceQuery = Invoke-RestMethod "http://localhost:16686/api/traces?service=$serviceName&limit=5" -TimeoutSec 10
+        if ($traceQuery.data.Count -lt 1) {
+            throw "Jaeger did not return traces for $serviceName."
+        }
+    }
+
     docker compose logs --tail 80 hello-telemetry
+    docker compose logs --tail 80 python-zero-code
+    docker compose logs --tail 80 java-zero-code
     docker compose logs --tail 80 otel-collector
 
     Write-Host "PASS: local lab verification completed."
