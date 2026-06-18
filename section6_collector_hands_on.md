@@ -9,7 +9,7 @@
 | `s6-l2` | Collector コンテナの起動、ヘルスチェック、公開ポート |
 | `s6-l3` | receiver、processor、exporter、extension の設定ブロック |
 | `s6-l4` | traces と metrics の service pipelines |
-| `s6-l5` | memory_limiter、resource、batch processor の役割 |
+| `s6-l5` | memory_limiter、resource、attributes、batch processor の役割 |
 | `s6-l6` | Jaeger、Prometheus、debug exporter への出し分け |
 
 ## 1. ローカルラボを起動する
@@ -41,7 +41,7 @@ Get-Content .\otel-collector-config.yaml
 ```text
 application
   -> receiver: otlp
-  -> processor: memory_limiter, resource, batch
+  -> processor: memory_limiter, resource, attributes, batch
   -> exporter: otlp/jaeger, prometheus, debug
 ```
 
@@ -50,6 +50,7 @@ application
 - `receivers.otlp`: アプリから OTLP gRPC と OTLP HTTP を受け取る入口
 - `processors.memory_limiter`: Collector のメモリ使用量が増えすぎる前に保護する処理
 - `processors.resource`: テレメトリに共通のリソース属性を付ける処理
+- `processors.attributes`: Span などの属性をルールで追加、更新、削除する処理
 - `processors.batch`: 小さなデータをまとめて送る処理
 - `exporters.otlp/jaeger`: Trace を Jaeger に送る出口
 - `exporters.prometheus`: Metric を Prometheus から取得できる形で公開する出口
@@ -65,7 +66,7 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [memory_limiter, resource, batch]
+      processors: [memory_limiter, resource, attributes, batch]
       exporters: [otlp/jaeger, debug]
     metrics:
       receivers: [otlp]

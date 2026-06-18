@@ -16,6 +16,11 @@ processors:
       - key: service.namespace
         value: c008-local-lab
         action: upsert
+  attributes:
+    actions:
+      - key: lab.collector.processor
+        value: attributes
+        action: upsert
   batch:
 
 exporters:
@@ -37,7 +42,7 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [memory_limiter, resource, batch]
+      processors: [memory_limiter, resource, attributes, batch]
       exporters: [otlp/jaeger, debug]
     metrics:
       receivers: [otlp]

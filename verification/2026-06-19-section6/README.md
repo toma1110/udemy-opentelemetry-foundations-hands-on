@@ -35,7 +35,8 @@ Invoke-RestMethod "http://localhost:16686/api/traces?service=hello-telemetry&lim
 - `docker compose ps` showed all local lab containers running.
 - Collector health check returned `Server available`.
 - Collector accepted OTLP HTTP and gRPC through `otlp` receiver.
-- `memory_limiter`, `resource`, and `batch` processors were loaded in the trace and metric pipelines.
+- `memory_limiter`, `resource`, `attributes`, and `batch` processors were loaded in the trace pipeline.
+- `memory_limiter`, `resource`, and `batch` processors were loaded in the metric pipeline.
 - `debug` exporter logs showed trace and metric export activity.
 - Prometheus `up` returned `otel-collector:8889 = 1` and `hello-telemetry:8000 = 1`.
 - Prometheus `hello_requests_total` showed `/checkout` HTTP 200 and `/error` HTTP 500 data points.
@@ -51,14 +52,16 @@ Decision: pass for Section 6 video production.
 | `01-collector-health.png` | Collector health check |
 | `02-prometheus-targets.png` | Prometheus targets |
 | `03-prometheus-query-hello-requests.png` | Prometheus metric query |
+| `03b-prometheus-query-hello-requests-readable.png` | Readable rendering of the verified Prometheus API query result |
 | `04-jaeger-search-hello-telemetry.png` | Jaeger service search |
 | `04b-jaeger-checkout-traces.png` | Jaeger `/checkout` trace search |
 | `05-collector-config-file.png` | Raw Collector config file in browser |
 | `05b-collector-config-readable.png` | Readable rendering of the verified Collector config |
+| `05c-collector-pipelines-readable.png` | Readable rendering of exporters and service pipelines |
 
 ## Notes for video production
 
 - Use the large readable config screenshot for learner-facing slides.
 - Use `04b-jaeger-checkout-traces.png` when explaining trace exporter behavior.
-- Use `03-prometheus-query-hello-requests.png` when explaining metric exporter behavior.
+- Use `03b-prometheus-query-hello-requests-readable.png` when explaining metric exporter behavior.
 - The screenshots do not include credentials or cloud account information.

@@ -305,7 +305,7 @@ Section 6 では、同じローカルラボを使って OpenTelemetry Collector 
 - Collector コンテナの起動とヘルスチェック
 - receiver、processor、exporter、extension の役割
 - traces と metrics の service pipelines
-- memory_limiter、resource、batch processor の読み方
+- memory_limiter、resource、attributes、batch processor の読み方
 - Jaeger、Prometheus、debug exporter への出し分け
 
 手順は次を参照してください。
