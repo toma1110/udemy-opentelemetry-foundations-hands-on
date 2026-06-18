@@ -7,6 +7,15 @@ receivers:
         endpoint: 0.0.0.0:4318
 
 processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 512
+    spike_limit_mib: 128
+  resource:
+    attributes:
+      - key: service.namespace
+        value: c008-local-lab
+        action: upsert
   batch:
 
 exporters:
@@ -28,9 +37,9 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch]
+      processors: [memory_limiter, resource, batch]
       exporters: [otlp/jaeger, debug]
     metrics:
       receivers: [otlp]
-      processors: [batch]
+      processors: [memory_limiter, resource, batch]
       exporters: [prometheus, debug]

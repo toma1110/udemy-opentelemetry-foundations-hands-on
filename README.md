@@ -295,3 +295,27 @@ Instructor verification evidence for the Section 3-5 hands-on flow is stored in:
 ```text
 verification/2026-06-17-section3-5/
 ```
+
+## Section 6 Collector hands-on
+
+Section 6 では、同じローカルラボを使って OpenTelemetry Collector の設定を読みます。
+
+扱う内容:
+
+- Collector コンテナの起動とヘルスチェック
+- receiver、processor、exporter、extension の役割
+- traces と metrics の service pipelines
+- memory_limiter、resource、batch processor の読み方
+- Jaeger、Prometheus、debug exporter への出し分け
+
+手順は次を参照してください。
+
+```text
+section6_collector_hands_on.md
+```
+
+Instructor verification evidence for the Section 6 Collector flow is stored in:
+
+```text
+verification/2026-06-19-section6/
+```
