@@ -50,6 +50,7 @@ Decision: pass for Section 6 video production.
 | File | Purpose |
 | --- | --- |
 | `01-collector-health.png` | Collector health check |
+| `01b-collector-health-readable.png` | Readable rendering of the verified Collector health check response |
 | `02-prometheus-targets.png` | Prometheus targets |
 | `03-prometheus-query-hello-requests.png` | Prometheus metric query |
 | `03b-prometheus-query-hello-requests-readable.png` | Readable rendering of the verified Prometheus API query result |
@@ -58,6 +59,7 @@ Decision: pass for Section 6 video production.
 | `05-collector-config-file.png` | Raw Collector config file in browser |
 | `05b-collector-config-readable.png` | Readable rendering of the verified Collector config |
 | `05c-collector-pipelines-readable.png` | Readable rendering of exporters and service pipelines |
+| `05d-collector-service-pipelines-full.png` | Readable rendering of only the verified service pipelines block |
 
 ## Notes for video production
 
