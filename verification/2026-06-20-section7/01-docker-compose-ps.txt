@@ -1,0 +1,8 @@
+﻿NAME                    IMAGE                                          COMMAND                  SERVICE            CREATED              STATUS              PORTS
+c008-grafana            grafana/grafana:11.1.0                         "/run.sh"                grafana            4 days ago           Up 3 minutes        0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+c008-hello-telemetry    local_lab-hello-telemetry                      "uvicorn app:app --h…"   hello-telemetry    37 hours ago         Up 3 minutes        0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+c008-jaeger             jaegertracing/all-in-one:1.57                  "/go/bin/all-in-one-…"   jaeger             4 days ago           Up 3 minutes        0.0.0.0:16686->16686/tcp, [::]:16686->16686/tcp
+c008-java-zero-code     local_lab-java-zero-code                       "/__cacert_entrypoin…"   java-zero-code     3 minutes ago        Up 3 minutes        0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+c008-otel-collector     otel/opentelemetry-collector-contrib:0.102.1   "/otelcol-contrib --…"   otel-collector     About a minute ago   Up About a minute   0.0.0.0:4317-4318->4317-4318/tcp, [::]:4317-4318->4317-4318/tcp, 0.0.0.0:8888-8889->8888-8889/tcp, [::]:8888-8889->8888-8889/tcp, 0.0.0.0:13133->13133/tcp, [::]:13133->13133/tcp
+c008-prometheus         prom/prometheus:v2.53.0                        "/bin/prometheus --c…"   prometheus         47 seconds ago       Up 47 seconds       0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+c008-python-zero-code   local_lab-python-zero-code                     "opentelemetry-instr…"   python-zero-code   3 days ago           Up 3 minutes        0.0.0.0:8001->8001/tcp, [::]:8001->8001/tcp

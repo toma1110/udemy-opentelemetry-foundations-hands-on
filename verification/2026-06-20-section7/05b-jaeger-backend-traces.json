@@ -1,0 +1,508 @@
+﻿{
+    "data":  [
+                 {
+                     "traceID":  "4e4b202bae54706b9880614b79e31c4a",
+                     "spans":  [
+                                   {
+                                       "traceID":  "4e4b202bae54706b9880614b79e31c4a",
+                                       "spanID":  "c938871d069339f9",
+                                       "operationName":  "GET /backend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980719041,
+                                       "duration":  1617,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/backend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "69896de8d0f97e72ff8a1e35c010bed7",
+                     "spans":  [
+                                   {
+                                       "traceID":  "69896de8d0f97e72ff8a1e35c010bed7",
+                                       "spanID":  "21dcbfa14d0c2951",
+                                       "operationName":  "GET /backend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980730574,
+                                       "duration":  836,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/backend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "e30ac1fb974014bb664f5facbeab5354",
+                     "spans":  [
+                                   {
+                                       "traceID":  "e30ac1fb974014bb664f5facbeab5354",
+                                       "spanID":  "588d1a94368a3546",
+                                       "operationName":  "GET /backend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980745720,
+                                       "duration":  847,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/backend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "c05d60a40e593d3bd4e2dd627e375657",
+                     "spans":  [
+                                   {
+                                       "traceID":  "c05d60a40e593d3bd4e2dd627e375657",
+                                       "spanID":  "27bf33914ff7aa7b",
+                                       "operationName":  "GET /backend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980748142,
+                                       "duration":  748,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/backend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "6ff7d26e935145ec2f51430f53479176",
+                     "spans":  [
+                                   {
+                                       "traceID":  "6ff7d26e935145ec2f51430f53479176",
+                                       "spanID":  "dccfb87df96738cc",
+                                       "operationName":  "GET /backend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980750356,
+                                       "duration":  742,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/backend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 }
+             ],
+    "total":  0,
+    "limit":  0,
+    "offset":  0,
+    "errors":  null
+}

@@ -1,0 +1,9 @@
+Command:
+.\verify_local_lab.ps1 -SkipStart
+
+Result:
+PASS: local lab verification completed.
+
+Notes:
+- Docker Desktop engine was running.
+- Existing Section 2-6 local lab checks still passed after adding Collector internal metrics on port 8888.

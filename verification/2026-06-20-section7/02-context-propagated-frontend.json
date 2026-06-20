@@ -1,0 +1,8 @@
+﻿{
+    "status":  "ok",
+    "traceparent_sent":  "00-a2b2bf893bd59beb9d069e9e86695bb6-d150f317d2b7550b-01",
+    "backend":  {
+                    "status":  "ok",
+                    "received_traceparent":  "00-a2b2bf893bd59beb9d069e9e86695bb6-d150f317d2b7550b-01"
+                }
+}

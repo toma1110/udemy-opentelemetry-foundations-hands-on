@@ -1,0 +1,5 @@
+Command:
+docker compose run --rm --entrypoint /otelcol-contrib otel-collector validate --config=/etc/otelcol-config.yaml
+
+Result:
+PASS: collector config validate exited with code 0.

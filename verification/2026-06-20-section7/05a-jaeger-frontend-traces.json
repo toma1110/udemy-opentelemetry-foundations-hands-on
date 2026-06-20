@@ -1,0 +1,918 @@
+﻿{
+    "data":  [
+                 {
+                     "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                     "spans":  [
+                                   {
+                                       "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                                       "spanID":  "024e18dd55e195b7",
+                                       "operationName":  "backend.handle_request",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                                                              "spanID":  "e9f00e86ac597549"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950698092285,
+                                       "duration":  119,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.backend",
+                                                        "type":  "string",
+                                                        "value":  "local"
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                                       "spanID":  "e9f00e86ac597549",
+                                       "operationName":  "frontend.call_backend",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                                                              "spanID":  "7f016c3d1791583e"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950698085787,
+                                       "duration":  8123,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.propagated_traceparent",
+                                                        "type":  "bool",
+                                                        "value":  true
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "c056aba86a1a1bb98e55338af7bff32d",
+                                       "spanID":  "7f016c3d1791583e",
+                                       "operationName":  "GET /frontend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950698085443,
+                                       "duration":  8818,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/frontend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                     "spans":  [
+                                   {
+                                       "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                                       "spanID":  "d150f317d2b7550b",
+                                       "operationName":  "frontend.call_backend",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                                                              "spanID":  "53a99639891605b5"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950880904614,
+                                       "duration":  8801,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.propagated_traceparent",
+                                                        "type":  "bool",
+                                                        "value":  true
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                                       "spanID":  "f671f9cde89c379f",
+                                       "operationName":  "backend.handle_request",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                                                              "spanID":  "d150f317d2b7550b"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950880911945,
+                                       "duration":  89,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.backend",
+                                                        "type":  "string",
+                                                        "value":  "local"
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "a2b2bf893bd59beb9d069e9e86695bb6",
+                                       "spanID":  "53a99639891605b5",
+                                       "operationName":  "GET /frontend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950880904226,
+                                       "duration":  9509,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/frontend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                     "spans":  [
+                                   {
+                                       "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                                       "spanID":  "fe0d06a71e388951",
+                                       "operationName":  "backend.handle_request",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                                                              "spanID":  "75783bf055911cd0"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980661556,
+                                       "duration":  112,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.backend",
+                                                        "type":  "string",
+                                                        "value":  "local"
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                                       "spanID":  "75783bf055911cd0",
+                                       "operationName":  "frontend.call_backend",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                                                              "spanID":  "f88ae4e5f3f7a8ec"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980655216,
+                                       "duration":  7599,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.propagated_traceparent",
+                                                        "type":  "bool",
+                                                        "value":  true
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "8a8b4fc62b06192db520b4070e82053c",
+                                       "spanID":  "f88ae4e5f3f7a8ec",
+                                       "operationName":  "GET /frontend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980654817,
+                                       "duration":  8332,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/frontend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                     "spans":  [
+                                   {
+                                       "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                                       "spanID":  "b5412c999116f3a6",
+                                       "operationName":  "backend.handle_request",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                                                              "spanID":  "44bdd6ca59ebda4e"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980720120,
+                                       "duration":  114,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.backend",
+                                                        "type":  "string",
+                                                        "value":  "local"
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                                       "spanID":  "44bdd6ca59ebda4e",
+                                       "operationName":  "frontend.call_backend",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                                                              "spanID":  "3277019be25adfc1"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980712485,
+                                       "duration":  9197,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.propagated_traceparent",
+                                                        "type":  "bool",
+                                                        "value":  true
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "771824b641d601cf81c4d6c60cc2fedb",
+                                       "spanID":  "3277019be25adfc1",
+                                       "operationName":  "GET /frontend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980711986,
+                                       "duration":  10082,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/frontend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 },
+                 {
+                     "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                     "spans":  [
+                                   {
+                                       "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                                       "spanID":  "34701d034c6761e5",
+                                       "operationName":  "frontend.call_backend",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                                                              "spanID":  "2b1eb3c7be18fbc0"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980724514,
+                                       "duration":  7825,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.propagated_traceparent",
+                                                        "type":  "bool",
+                                                        "value":  true
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                                       "spanID":  "2b1eb3c7be18fbc0",
+                                       "operationName":  "GET /frontend",
+                                       "references":  [
+
+                                                      ],
+                                       "startTime":  1781950980724039,
+                                       "duration":  8702,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "http.request.method",
+                                                        "type":  "string",
+                                                        "value":  "GET"
+                                                    },
+                                                    {
+                                                        "key":  "url.path",
+                                                        "type":  "string",
+                                                        "value":  "/frontend"
+                                                    },
+                                                    {
+                                                        "key":  "http.response.status_code",
+                                                        "type":  "int64",
+                                                        "value":  200
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   },
+                                   {
+                                       "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                                       "spanID":  "bbacc8c78ba38d7e",
+                                       "operationName":  "backend.handle_request",
+                                       "references":  [
+                                                          {
+                                                              "refType":  "CHILD_OF",
+                                                              "traceID":  "9e89598d7c51ac9d32b41690dfc88e73",
+                                                              "spanID":  "34701d034c6761e5"
+                                                          }
+                                                      ],
+                                       "startTime":  1781950980730919,
+                                       "duration":  96,
+                                       "tags":  [
+                                                    {
+                                                        "key":  "app.backend",
+                                                        "type":  "string",
+                                                        "value":  "local"
+                                                    },
+                                                    {
+                                                        "key":  "lab.collector.processor",
+                                                        "type":  "string",
+                                                        "value":  "attributes"
+                                                    },
+                                                    {
+                                                        "key":  "span.kind",
+                                                        "type":  "string",
+                                                        "value":  "internal"
+                                                    },
+                                                    {
+                                                        "key":  "internal.span.format",
+                                                        "type":  "string",
+                                                        "value":  "otlp"
+                                                    }
+                                                ],
+                                       "logs":  [
+
+                                                ],
+                                       "processID":  "p1",
+                                       "warnings":  null
+                                   }
+                               ],
+                     "processes":  {
+                                       "p1":  {
+                                                  "serviceName":  "hello-telemetry",
+                                                  "tags":  [
+                                                               {
+                                                                   "key":  "course.id",
+                                                                   "type":  "string",
+                                                                   "value":  "c008"
+                                                               },
+                                                               {
+                                                                   "key":  "deployment.environment",
+                                                                   "type":  "string",
+                                                                   "value":  "local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "otel.library.name",
+                                                                   "type":  "string",
+                                                                   "value":  "app"
+                                                               },
+                                                               {
+                                                                   "key":  "service.namespace",
+                                                                   "type":  "string",
+                                                                   "value":  "c008-local-lab"
+                                                               },
+                                                               {
+                                                                   "key":  "service.version",
+                                                                   "type":  "string",
+                                                                   "value":  "0.1.0"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.language",
+                                                                   "type":  "string",
+                                                                   "value":  "python"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.name",
+                                                                   "type":  "string",
+                                                                   "value":  "opentelemetry"
+                                                               },
+                                                               {
+                                                                   "key":  "telemetry.sdk.version",
+                                                                   "type":  "string",
+                                                                   "value":  "1.29.0"
+                                                               }
+                                                           ]
+                                              }
+                                   },
+                     "warnings":  null
+                 }
+             ],
+    "total":  0,
+    "limit":  0,
+    "offset":  0,
+    "errors":  null
+}

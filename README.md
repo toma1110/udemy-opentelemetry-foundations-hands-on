@@ -12,6 +12,8 @@
 | `s2-l3` | Hello Telemetryアプリを見る |
 | `s2-l4` | 公式OpenTelemetry Demoを見る |
 | `s2-l5` | よくある起動失敗と確認コマンド |
+| `s7-l2` | コンテキスト伝搬の失敗パターン |
+| `s7-l3` | Collector pipeline debugging |
 
 ## 目的
 
@@ -200,6 +202,7 @@ docker compose version
 | 3000 | Grafana |
 | 4317 | OTLP gRPC |
 | 4318 | OTLP HTTP |
+| 8888 | Collector internal metrics |
 | 8889 | Collector Prometheus exporter |
 
 競合を確認します。
@@ -318,4 +321,28 @@ Instructor verification evidence for the Section 6 Collector flow is stored in:
 
 ```text
 verification/2026-06-19-section6/
+```
+
+## Section 7 Debugging hands-on
+
+Section 7 では、同じローカルラボを使って Trace の分断と Collector pipeline の切り分けを確認します。
+
+扱う内容:
+
+- `traceparent` が渡されるケースと渡されないケース
+- Jaeger で見る connected trace と broken trace
+- Collector 設定の validate
+- debug exporter のログ
+- Collector 内部メトリクス
+
+手順は次を参照してください。
+
+```text
+section7_debugging_hands_on.md
+```
+
+Instructor verification evidence for the Section 7 debugging flow is stored in:
+
+```text
+verification/2026-06-20-section7/
 ```

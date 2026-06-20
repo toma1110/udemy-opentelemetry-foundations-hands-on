@@ -1,0 +1,84 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "activeTargets":  [
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "hello-telemetry:8000",
+                                                                    "__metrics_path__":  "/metrics",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "5s",
+                                                                    "__scrape_timeout__":  "5s",
+                                                                    "job":  "hello-telemetry"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "hello-telemetry:8000",
+                                                          "job":  "hello-telemetry"
+                                                      },
+                                           "scrapePool":  "hello-telemetry",
+                                           "scrapeUrl":  "http://hello-telemetry:8000/metrics",
+                                           "globalUrl":  "http://hello-telemetry:8000/metrics",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-06-20T10:21:16.563054098Z",
+                                           "lastScrapeDuration":  0.003204031,
+                                           "health":  "up",
+                                           "scrapeInterval":  "5s",
+                                           "scrapeTimeout":  "5s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "otel-collector:8889",
+                                                                    "__metrics_path__":  "/metrics",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "5s",
+                                                                    "__scrape_timeout__":  "5s",
+                                                                    "job":  "otel-collector-exporter"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "otel-collector:8889",
+                                                          "job":  "otel-collector-exporter"
+                                                      },
+                                           "scrapePool":  "otel-collector-exporter",
+                                           "scrapeUrl":  "http://otel-collector:8889/metrics",
+                                           "globalUrl":  "http://otel-collector:8889/metrics",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-06-20T10:21:17.563893545Z",
+                                           "lastScrapeDuration":  0.002164855,
+                                           "health":  "up",
+                                           "scrapeInterval":  "5s",
+                                           "scrapeTimeout":  "5s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "otel-collector:8888",
+                                                                    "__metrics_path__":  "/metrics",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "5s",
+                                                                    "__scrape_timeout__":  "5s",
+                                                                    "job":  "otel-collector-internal"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "otel-collector:8888",
+                                                          "job":  "otel-collector-internal"
+                                                      },
+                                           "scrapePool":  "otel-collector-internal",
+                                           "scrapeUrl":  "http://otel-collector:8888/metrics",
+                                           "globalUrl":  "http://otel-collector:8888/metrics",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-06-20T10:21:19.217565463Z",
+                                           "lastScrapeDuration":  0.003302775,
+                                           "health":  "up",
+                                           "scrapeInterval":  "5s",
+                                           "scrapeTimeout":  "5s"
+                                       }
+                                   ],
+                 "droppedTargets":  [
+
+                                    ],
+                 "droppedTargetCounts":  {
+                                             "hello-telemetry":  0,
+                                             "otel-collector-exporter":  0,
+                                             "otel-collector-internal":  0
+                                         }
+             }
+}

@@ -1,0 +1,24 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "resultType":  "vector",
+                 "result":  [
+                                {
+                                    "metric":  {
+                                                   "__name__":  "otelcol_receiver_accepted_spans",
+                                                   "instance":  "otel-collector:8888",
+                                                   "job":  "otel-collector-internal",
+                                                   "receiver":  "otlp",
+                                                   "service_instance_id":  "7a9537d6-e170-4f6e-95ff-565f85604ef3",
+                                                   "service_name":  "otelcol-contrib",
+                                                   "service_version":  "0.102.1",
+                                                   "transport":  "http"
+                                               },
+                                    "value":  [
+                                                  1781950880.999,
+                                                  "12"
+                                              ]
+                                }
+                            ]
+             }
+}
