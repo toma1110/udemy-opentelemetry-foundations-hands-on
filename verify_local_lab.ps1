@@ -46,6 +46,38 @@ function Invoke-JsonWithRetry {
     throw $lastError
 }
 
+function Invoke-PrometheusQueryWithRetry {
+    param(
+        [string]$Query,
+        [int]$MinResults = 1,
+        [int]$Attempts = 30,
+        [int]$DelaySeconds = 2
+    )
+
+    $encodedQuery = [System.Uri]::EscapeDataString($Query)
+    $uri = "http://localhost:9090/api/v1/query?query=$encodedQuery"
+    $lastMessage = $null
+
+    foreach ($attempt in 1..$Attempts) {
+        try {
+            $result = Invoke-RestMethod $uri -TimeoutSec 10
+            if ($result.status -eq "success" -and $result.data.result.Count -ge $MinResults) {
+                return $result
+            }
+
+            $lastMessage = "status=$($result.status), result_count=$($result.data.result.Count)"
+        } catch {
+            $lastMessage = $_.Exception.Message
+        }
+
+        if ($attempt -lt $Attempts) {
+            Start-Sleep -Seconds $DelaySeconds
+        }
+    }
+
+    throw "Prometheus query '$Query' did not return at least $MinResults result(s) after $Attempts attempts. Last result: $lastMessage"
+}
+
 Push-Location $labDir
 try {
     docker --version
@@ -63,33 +95,33 @@ try {
     }
 
     1..5 | ForEach-Object {
-        $response = Invoke-RestMethod http://localhost:8000/checkout -TimeoutSec 10
+        $response = Invoke-JsonWithRetry -Uri "http://localhost:8000/checkout"
         if ($response.status -ne "accepted") {
             throw "checkout returned unexpected response: $($response | ConvertTo-Json -Compress)"
         }
     }
 
-    $manualSpan = Invoke-RestMethod http://localhost:8000/manual-span -TimeoutSec 10
+    $manualSpan = Invoke-JsonWithRetry -Uri "http://localhost:8000/manual-span"
     if ($manualSpan.status -ne "reserved") {
         throw "manual-span returned unexpected response: $($manualSpan | ConvertTo-Json -Compress)"
     }
 
-    $frontend = Invoke-RestMethod http://localhost:8000/frontend -TimeoutSec 10
+    $frontend = Invoke-JsonWithRetry -Uri "http://localhost:8000/frontend"
     if ($frontend.status -ne "ok" -or [string]::IsNullOrWhiteSpace($frontend.traceparent_sent)) {
         throw "frontend did not propagate traceparent: $($frontend | ConvertTo-Json -Compress)"
     }
 
-    $pythonAuto = Invoke-RestMethod http://localhost:8001/auto/checkout -TimeoutSec 10
+    $pythonAuto = Invoke-JsonWithRetry -Uri "http://localhost:8001/auto/checkout"
     if ($pythonAuto.status -ne "accepted") {
         throw "python zero-code app returned unexpected response: $($pythonAuto | ConvertTo-Json -Compress)"
     }
 
-    $javaHello = Invoke-RestMethod http://localhost:8080/hello -TimeoutSec 10
+    $javaHello = Invoke-JsonWithRetry -Uri "http://localhost:8080/hello"
     if ($javaHello.status -ne "ok") {
         throw "java zero-code app returned unexpected response: $($javaHello | ConvertTo-Json -Compress)"
     }
 
-    $javaCheckout = Invoke-RestMethod http://localhost:8080/checkout -TimeoutSec 10
+    $javaCheckout = Invoke-JsonWithRetry -Uri "http://localhost:8080/checkout"
     if ($javaCheckout.status -ne "accepted") {
         throw "java checkout returned unexpected response: $($javaCheckout | ConvertTo-Json -Compress)"
     }
@@ -106,10 +138,7 @@ try {
         throw "Prometheus targets API did not return success."
     }
 
-    $query = Invoke-RestMethod "http://localhost:9090/api/v1/query?query=hello_requests_total" -TimeoutSec 10
-    if ($query.status -ne "success" -or $query.data.result.Count -lt 1) {
-        throw "Prometheus query did not return hello_requests_total data."
-    }
+    $query = Invoke-PrometheusQueryWithRetry -Query "hello_requests_total"
 
     Start-Sleep -Seconds 6
 
